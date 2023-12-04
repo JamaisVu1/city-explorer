@@ -6,8 +6,10 @@ import Header from "./components/Header.jsx";
 import CityForm from "./components/CityForm.jsx";
 import Map from './components/Map.jsx';
 
-// Read in from .env.local file and live, it comes from "Environment Variables"
 const API_KEY = import.meta.env.VITE_API_KEY;
+console.log('API Key:', API_KEY);
+
+
 
 function App() {
 
