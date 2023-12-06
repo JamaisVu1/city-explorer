@@ -18,6 +18,16 @@ function App() {
     console.log("Changing to", newCity);
   }
 
+  async function weatherData(latitude, longitude) {
+    try {
+      let response = await axios.get(SERVER, {
+        params: { latitude: latitude, longitude: longitude },
+      });
+    } catch {
+      console.log("it broke");
+    }
+  }
+
   async function getLocation(cityName) {
     let url = `https://us1.locationiq.com/v1/search?key=${API_KEY}&q=${cityName}&format=json`;
     try {
