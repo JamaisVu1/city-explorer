@@ -3,6 +3,8 @@ import axios from "axios";
 import Header from "./components/Header.jsx";
 import CityForm from "./components/CityForm.jsx";
 import Map from "./components/Map.jsx";
+import Weather from "./components/Weather.jsx";
+
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -50,9 +52,10 @@ function App() {
   }
 
   return (
-    <>
+   <>
       <Header />
       <CityForm city={city} handleChangeCity={changeCity} />
+      <Weather lat={latitude} lon={longitude} />
       {error && (
         <div style={{ color: "red" }}>
           <p>{error}</p>

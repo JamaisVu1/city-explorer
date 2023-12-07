@@ -35,7 +35,7 @@ const Weather = ({ lat, lon }) => {
             <div key={index}>
               <p>Date: {day.date}</p>
               <p>Description: {day.description}</p>
-              {/* Add more details based on your API response */}
+              
             </div>
           ))}
         </div>
