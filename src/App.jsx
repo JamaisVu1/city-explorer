@@ -11,7 +11,7 @@ function App() {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
   const [error, setError] = useState(null);
-
+  const SERVER = "http://localhost:3000/weather";
   async function changeCity(newCity) {
     await getLocation(newCity);
 
@@ -24,7 +24,7 @@ function App() {
         params: { latitude: latitude, longitude: longitude },
       });
     } catch {
-      console.log("it broke");
+      console.log("weatherdata broke");
     }
   }
 
@@ -36,6 +36,7 @@ function App() {
       setCity(response.data[0].display_name);
       setLatitude(response.data[0].lat);
       setLongitude(response.data[0].lon);
+      weatherData(response.data[0].lat, response.data[0].lon);
 
       setError(null);
     } catch (error) {
