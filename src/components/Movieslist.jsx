@@ -1,7 +1,8 @@
+// gpt assisted
 import React from "react";
 
 function MoviesList({ movies }) {
-  // Check if movies is undefined or null
+  console.log(movies);
   if (!movies || movies.length === 0) {
     return (
       <div>
