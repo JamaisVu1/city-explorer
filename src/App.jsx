@@ -15,7 +15,7 @@ function App() {
   const [longitude, setLongitude] = useState(null);
   const [error, setError] = useState(null);
   const [movies, setMovies] = useState([]);
-  const [weatherForecast, setWeatherForecast] = useState([]); // State to store weather data
+  const [weatherForecast, setWeatherForecast] = useState([]); 
 
   async function changeCity(newCity) {
     await getLocation(newCity);
@@ -27,10 +27,7 @@ function App() {
     const url = `${SERVER}/weather?lat=${latitude}&lon=${longitude}`
     try {
       let response = await axios.get(url)
-      // let response = await axios.get(`${SERVER}/weather`, {
-      //   params: { lat: latitude, lon: longitude },
-      // });
-
+    
       setWeatherForecast(response.data);
 
       console.log(response);

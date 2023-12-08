@@ -1,5 +1,6 @@
 // gpt assisted
 import React from "react";
+import Movie from "./movie"; 
 
 function MoviesList({ movies }) {
   console.log(movies);
@@ -16,10 +17,7 @@ function MoviesList({ movies }) {
       <h2>Movies</h2>
       <ul>
         {movies.map((movie, index) => (
-          <li key={index}>
-            <img src={movie.image_url} alt={movie.title} />
-            <p>{movie.title}</p>
-          </li>
+          <Movie key={index} movie={movie} />
         ))}
       </ul>
     </div>
