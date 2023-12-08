@@ -7,7 +7,7 @@ import Weather from "./components/Weather.jsx";
 import MoviesList from "./components/Movieslist.jsx";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
-const SERVER = import.meta.env.VITE_SERVER;
+const SERVER = "https://city-explorer-api-u718.onrender.com"
 
 function App() {
   const [city, setCity] = useState("");
