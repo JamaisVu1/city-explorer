@@ -1,18 +1,18 @@
 // gpt assisted
+
+
 import React from "react";
+import WeatherDay from "./weatherDay"; 
 
 const WeatherDisplay = ({ weatherForecast }) => {
   console.log(weatherForecast.forecast);
   const forecastArray = weatherForecast.forecast || [];
+  
   return (
     <div>
       <h2>Weather Forecast</h2>
       {forecastArray.map((day, index) => (
-        <div key={index}>
-          <p>Date: {day.date}</p>
-          <p>Description: {day.description}</p>
-          <hr />
-        </div>
+        <WeatherDay key={index} day={day} />
       ))}
     </div>
   );

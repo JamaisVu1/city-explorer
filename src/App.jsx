@@ -7,7 +7,7 @@ import Weather from "./components/Weather.jsx";
 import MoviesList from "./components/Movieslist.jsx";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
-const SERVER = "https://city-explorer-api-u718.onrender.com"
+const SERVER = import.meta.env.VITE_SERVER;
 
 function App() {
   const [city, setCity] = useState("");
@@ -15,7 +15,7 @@ function App() {
   const [longitude, setLongitude] = useState(null);
   const [error, setError] = useState(null);
   const [movies, setMovies] = useState([]);
-  const [weatherForecast, setWeatherForecast] = useState([]); // State to store weather data
+  const [weatherForecast, setWeatherForecast] = useState([]); 
 
   async function changeCity(newCity) {
     await getLocation(newCity);
@@ -27,10 +27,7 @@ function App() {
     const url = `${SERVER}/weather?lat=${latitude}&lon=${longitude}`
     try {
       let response = await axios.get(url)
-      // let response = await axios.get(`${SERVER}/weather`, {
-      //   params: { lat: latitude, lon: longitude },
-      // });
-
+    
       setWeatherForecast(response.data);
 
       console.log(response);
