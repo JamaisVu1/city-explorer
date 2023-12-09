@@ -5,7 +5,7 @@ import React from "react";
 import WeatherDay from "./weatherDay"; 
 
 const WeatherDisplay = ({ weatherForecast }) => {
-  console.log(weatherForecast.forecast);
+  // console.log(weatherForecast.forecast);
   const forecastArray = weatherForecast.forecast || [];
   
   return (

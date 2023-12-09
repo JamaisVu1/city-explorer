@@ -19,20 +19,20 @@ function App() {
 
   async function changeCity(newCity) {
     await getLocation(newCity);
-    console.log("Changing to", newCity);
+    // console.log("Changing to", newCity);
   }
 
   async function weatherData(latitude, longitude) {
-    console.log(latitude, longitude);
+    // console.log(latitude, longitude);
     const url = `${SERVER}/weather?lat=${latitude}&lon=${longitude}`
     try {
       let response = await axios.get(url)
     
       setWeatherForecast(response.data);
 
-      console.log(response);
+      // console.log(response);
     } catch {
-      console.log("weatherdata broke");
+      // console.log("weatherdata broke");
     }
   }
 
@@ -43,12 +43,12 @@ function App() {
         city: cityName,
       },
     });
-    console.log(moviesResponse);
+    // console.log(moviesResponse);
     
     
     setMovies(moviesResponse.data);
     
-    console.log(movies);
+    // console.log(movies);
   } catch (error) {
     console.error("Error fetching movie data:", error.message);
   }
@@ -56,10 +56,10 @@ function App() {
 
   async function getLocation(cityName) {
     let url = `https://us1.locationiq.com/v1/search?key=${API_KEY}&q=${cityName}&format=json`;
-    console.log(url);
+    // console.log(url);
     try {
       let response = await axios.get(url);
-      console.log(response);
+      // console.log(response);
       setCity(response.data[0].display_name);
       setLatitude(response.data[0].lat);
       setLongitude(response.data[0].lon);
@@ -77,7 +77,7 @@ function App() {
       );
     }
   }
-console.log(movies);
+// console.log(movies);
   return (
     <>
       <Header />

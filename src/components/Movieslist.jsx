@@ -3,7 +3,7 @@ import React from "react";
 import Movie from "./movie"; 
 
 function MoviesList({ movies }) {
-  console.log(movies);
+  // console.log(movies);
   if (!movies || movies.length === 0) {
     return (
       <div>
